@@ -6,6 +6,12 @@ passive closure, unverifiable claims, and unsafe action.
 This repository contains `AGENT_CALIBRATION_SKILL.md`, a portable Markdown skill you can paste
 into AI agents, coding assistants, local agents, research agents, or tool-using workflows.
 
+## Use it now
+
+Open [`AGENT_CALIBRATION_SKILL.md`](./AGENT_CALIBRATION_SKILL.md), copy the **Universal System Prompt**, and paste it into a new AI-agent session before starting important work.
+
+For a shorter intervention during a bad session, use [`quick-reference-card.md`](./quick-reference-card.md).
+
 ## What problem does this solve?
 
 AI agents often fail in predictable ways:
@@ -34,10 +40,6 @@ what failure modes trigger correction
 what actions require explicit authorization
 ```
 
-## Main file
-
-- [`AGENT_CALIBRATION_SKILL.md`](./AGENT_CALIBRATION_SKILL.md)
-
 ## Quick start
 
 Paste the **Universal System Prompt** section from `AGENT_CALIBRATION_SKILL.md` into a new agent session.
@@ -49,6 +51,15 @@ For a full preflight, run:
 3. Phase 3 — Calibration Test
 4. Then begin the actual task
 
+## Recommended path
+
+```text
+1. Copy the Universal System Prompt.
+2. Paste it into your AI agent.
+3. Start your actual task.
+4. Use the Quick Reference Card if the agent drifts, loops, fabricates, or freezes.
+```
+
 ## Repository contents
 
 ```text
@@ -59,7 +70,6 @@ session-log-template.md
 CHANGELOG.md
 CONTRIBUTING.md
 LICENSE
-MANIFEST.json
 PUBLISHING.md
 .gitignore
 .github/ISSUE_TEMPLATE/failure-mode-report.md
@@ -89,6 +99,31 @@ detect, name, and recover from.
 - file-cleanup agents
 - repo-level `AGENTS.md` or `CLAUDE.md` policies
 - agent evaluation sessions
+
+## Suggested repository topics
+
+```text
+ai-agents
+agent-safety
+prompt-engineering
+ai-hallucination
+claude-code
+chatgpt
+cursor
+agent-workflows
+verification
+ai-tools
+```
+
+## Share text
+
+```text
+I published Agent Calibration Skill v2.1.
+
+It is a universal preflight protocol for AI agents that helps reduce hallucinated output, fake tool claims, loop behavior, passive closure, and unverifiable assumptions.
+
+Instead of only fact-checking after an agent produces bad output, it calibrates the agent before real work begins.
+```
 
 ## License
 
