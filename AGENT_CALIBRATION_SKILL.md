@@ -10,6 +10,29 @@ It is not a guarantee against hallucination. It is a behavioral calibration syst
 
 ---
 
+## What Calibration Means
+
+Calibration is not simply telling an agent to “be better.”
+
+Calibration is the process of aligning an AI agent’s behavior with the actual task, available evidence, tool access, uncertainty boundaries, and action authority before real work begins.
+
+A calibrated agent knows:
+
+- what task it is doing
+- what evidence it can access
+- what claims it can verify
+- what assumptions must be labeled
+- what tools it can use
+- what actions require authorization
+- what failure modes require stopping or resetting
+- when to act without passive handoff
+
+An uncalibrated agent may sound confident while operating outside its evidence, tool access, or authority.
+
+This skill exists to make that boundary visible before the agent produces work you might trust.
+
+---
+
 ## Core Principle
 
 The central question is not:
