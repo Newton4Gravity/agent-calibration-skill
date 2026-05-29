@@ -20,7 +20,7 @@ It must work across:
 
 Examples are not the standard.
 
-Specific platforms such as ChatGPT, Claude Code, Cursor, Minis, Python IDE, local agents, or repository agents are only examples of environments where the skill can be used.
+Specific platform categories such as chat agents, coding agents, IDE agents, local agents, repository agents, research agents, robotics agents, or browser-based agents are only examples of environments where the skill can be used.
 
 The skill itself must remain platform-neutral.
 
@@ -79,7 +79,7 @@ If a rule only works for one platform, move it to an example or adapter file.
 
 ## Important distinction
 
-Minis-specific, Claude-specific, ChatGPT-specific, Cursor-specific, or Python-IDE-specific lessons may inspire the skill.
+Platform-specific lessons may inspire the skill.
 
 They must not define the skill.
 
