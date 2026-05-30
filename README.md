@@ -1,7 +1,7 @@
 # Agent Calibration Skill
 
 A universal preflight protocol for reducing AI-agent hallucination, tool misuse, loop behavior,
-passive closure, unverifiable claims, and unsafe action.
+passive closure, unverifiable claims, unsafe action, and calibration theater.
 
 This repository contains `AGENT_CALIBRATION_SKILL.md`, a portable Markdown skill you can paste
 into AI agents, coding assistants, local agents, research agents, or tool-using workflows.
@@ -11,6 +11,8 @@ into AI agents, coding assistants, local agents, research agents, or tool-using 
 Open [`AGENT_CALIBRATION_SKILL.md`](./AGENT_CALIBRATION_SKILL.md), copy the **Universal System Prompt**, and paste it into a new AI-agent session before starting important work.
 
 For a shorter intervention during a bad session, use [`quick-reference-card.md`](./quick-reference-card.md).
+
+For proportional, token-efficient use, read [`LEAN_CALIBRATION_MODE.md`](./LEAN_CALIBRATION_MODE.md).
 
 ## What problem does this solve?
 
@@ -24,8 +26,15 @@ AI agents often fail in predictable ways:
 - They overcorrect into paralysis after being corrected.
 - They verify one part of an answer and declare the whole thing verified.
 - They take or suggest high-impact actions without enough evidence.
+- They over-calibrate simple tasks and burn tokens on repeated reflection.
 
 This skill creates a repeatable calibration process before trusting an agent’s work.
+
+Core principle:
+
+```text
+Calibration should reduce wasted work, not become the work.
+```
 
 ## Core idea
 
@@ -38,6 +47,7 @@ what counts as evidence
 how uncertainty will be labeled
 what failure modes trigger correction
 what actions require explicit authorization
+how much calibration the task actually needs
 ```
 
 ## Quick start
@@ -51,19 +61,38 @@ For a full preflight, run:
 3. Phase 3 — Calibration Test
 4. Then begin the actual task
 
+For day-to-day work, use the smallest mode that protects the task:
+
+```text
+No Calibration Mode: casual/simple tasks
+Quick Calibration Mode: medium tasks with missing details
+Full Calibration Mode: tools/files/code/research/deployment/high-risk tasks
+Post-Action Self-Check Mode: after tool use or evidence-sensitive claims
+```
+
 ## Recommended path
 
 ```text
 1. Copy the Universal System Prompt.
 2. Paste it into your AI agent.
 3. Start your actual task.
-4. Use the Quick Reference Card if the agent drifts, loops, fabricates, or freezes.
+4. Use Lean Calibration Mode to avoid over-calibration.
+5. Use the Quick Reference Card if the agent drifts, loops, fabricates, or freezes.
 ```
 
 ## Repository contents
 
 ```text
 AGENT_CALIBRATION_SKILL.md
+AGENT_CALIBRATION_COMPACT.md
+LEAN_CALIBRATION_MODE.md
+COMPATIBILITY_MODES.md
+LIVE_TOOL_CLAIM_EVIDENCE_RULE.md
+TOOL_USE_ORDERING.md
+TOOL_ACCESS_CLASSIFICATION.md
+REPO_FILE_EVIDENCE_RULE.md
+BLOCKER_SCOPE_RULE.md
+PASSIVE_CLOSURE_RULE.md
 README.md
 quick-reference-card.md
 session-log-template.md
@@ -79,6 +108,8 @@ examples/
   cursor.md
   local-agent.md
   research-agent.md
+public-testing/
+case-studies/
 ```
 
 ## What this is not
@@ -87,6 +118,8 @@ This is not a technical guarantee against hallucination.
 
 It is a behavioral calibration protocol designed to make agent failures easier to prevent,
 detect, name, and recover from.
+
+It is also not a reason to turn every small message into a long audit. Good calibration is proportional to task risk.
 
 ## Recommended use cases
 
@@ -118,11 +151,11 @@ ai-tools
 ## Share text
 
 ```text
-I published Agent Calibration Skill v2.1.
+I published Agent Calibration Skill.
 
-It is a universal preflight protocol for AI agents that helps reduce hallucinated output, fake tool claims, loop behavior, passive closure, and unverifiable assumptions.
+It is a universal preflight protocol for AI agents that helps reduce hallucinated output, fake tool claims, loop behavior, passive closure, unverifiable assumptions, and calibration theater.
 
-Instead of only fact-checking after an agent produces bad output, it calibrates the agent before real work begins.
+Instead of only fact-checking after an agent produces bad output, it calibrates the agent before real work begins — and uses Lean Calibration Mode so calibration does not become the work.
 ```
 
 ## License
