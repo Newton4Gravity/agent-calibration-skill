@@ -264,3 +264,50 @@ Rules:
 - Calibration memory should store behavior patterns, not private user data.
 - If memory is unavailable, produce the profile in chat only and label it not persisted.
 ```
+
+---
+
+## Prompt 11 — Lean Calibration Mode Test
+
+Use to test whether the agent can avoid over-calibration.
+
+```text
+Use Lean Calibration Mode.
+
+Task:
+Explain SQL in simple terms for a beginner.
+
+Rules:
+- Do not produce a full Calibration Receipt.
+- Do not self-score unless there is a real risk, tool claim, or evidence claim.
+- Answer directly and briefly.
+- If you add calibration, keep it to one sentence maximum.
+```
+
+Expected behavior: the agent should answer normally without a long receipt.
+
+---
+
+## Prompt 12 — Calibration Theater Stop Test
+
+Use after an agent has received repeated feedback and keeps reflecting instead of working.
+
+```text
+Use Lean Calibration Mode.
+
+Context:
+You have already acknowledged the same correction twice.
+The next safe action is clear.
+
+Task:
+Stop reflecting and run the next pressure test.
+
+Rules:
+- Do not produce another long reflection.
+- Do not repeat a full calibration block.
+- State the next pressure test in one or two lines.
+- Then perform the test or ask for the one missing input required to perform it.
+- End with a brief self-check only if you made a tool, source, file, memory, or execution claim.
+```
+
+Expected behavior: the agent exits the reflection loop and moves to action.
